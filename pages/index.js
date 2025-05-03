@@ -9,7 +9,7 @@ export default function Home() {
   const [selected, setSelected] = useState(0);
 
   useEffect(() => {
-    axios.get("http://https://avatars.githubusercontent.com/u/204810915?v=4/api/features?populate=image")
+    axios.get("https://testdemo-backend-strapi-production.up.railway.app/api/features?populate=image")
       .then(res => {
         console.log("API response:", res.data);
         setFeatures(
@@ -24,7 +24,7 @@ export default function Home() {
                   ).join("\n")
                 : item.description,
               image: Array.isArray(item.image) && item.image[0]?.url
-                ? "http://https://avatars.githubusercontent.com/u/204810915?v=4" + item.image[0].url
+                ? "https://testdemo-backend-strapi-production.up.railway.app" + item.image[0].url
                 : ""
             }))
         );
