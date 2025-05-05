@@ -9,7 +9,7 @@ export default function Home() {
   const [selected, setSelected] = useState(0);
 
   useEffect(() => {
-    axios.get("http://192.168.134.72:1337/api/features?populate=image")
+    axios.get("http://188.43.136.218:1337/api/features?populate=image")
       .then(res => {
         console.log("API response:", res.data);
         setFeatures(
@@ -24,7 +24,7 @@ export default function Home() {
                   ).join("\n")
                 : item.description,
               image: Array.isArray(item.image) && item.image[0]?.url
-                ? "http://192.168.134.72:1337" + item.image[0].url
+                ? "http://188.43.136.218:1337" + item.image[0].url
                 : ""
             }))
         );
